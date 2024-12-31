@@ -2,11 +2,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import { decrement, increment } from './redux/features/counter/counterSlice';
+import { useAppSelector, useappDispatch } from './redux/hook';
+
 
 function App() {
 
-  const dispatch = useDispatch();
-  const {count} = useSelector((state) => state.counter)
+  const dispatch = useappDispatch();
+  const {count} = useAppSelector((state) => state.counter)
 
   const handlerIncrement = () =>{
     dispatch(increment());
